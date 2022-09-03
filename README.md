@@ -6,7 +6,7 @@ killer sudoku solver
 
 !["example.png"](https://github.com/atlasbioinfo/KillerSudokuSolver/blob/main/example.png)
 
-1. Modified the rules.tsv
+1. Modified the rules.csv
     * No overlapped rules support
     * row & colum, sum
     * e.g., [1,1] + [1,2] = 8 
