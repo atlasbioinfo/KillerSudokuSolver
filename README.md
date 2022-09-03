@@ -3,11 +3,14 @@ killer sudoku solver
 
 # Note: Using solver will make you lose your enjoyment of sudoku !!!
 
+![example.png]("example.png")
+
 1. Modified the rules.tsv
     * No overlapped rules support
     * row & colum, sum
     * e.g., [1,1] + [1,2] = 8 
     * 11,12,8
+    * Currently rules.csv corresponds to example.png
 2. Check that rules are correct: python checkRules.py
 3. Run solver: python killerSudokuSolver.py
 
