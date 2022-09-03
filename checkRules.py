@@ -3,7 +3,6 @@ numbers={}
 for i in range(9):
     for j in range(9):
         numbers[str(i+1)+str(j+1)]=0
-        tarr.append(0)
 
 with open("./rules.csv","r") as f:
     for line in f:
