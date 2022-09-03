@@ -244,17 +244,41 @@ def checkTwoSum():
 def checkGong45():
     for gong in gongCheck45:
         tlist=[]
+        tlistInternal=[]
         tsum=0
+        tsumInternal=0
         for i in range(len(manuRules)):
             label=0
+            allInGong=1
             for ttrule in manuRules[i]:
                 if (ttrule in gong):
                     label=1
-                    break
+                if (ttrule not in gong):
+                    allInGong=0
+
+            if (allInGong):
+                tlistInternal=tlistInternal+manuRules[i]
+                tsumInternal+=manuRulesSum[i]
+
             if (label):
                 tlist=tlist+manuRules[i]
                 tsum+=manuRulesSum[i]
-                
+
+        if (len(tlistInternal)==8):
+            for g in gong:
+                if (g not in tlistInternal):
+                    updateOne(g[0],g[1],45-tsumInternal)
+
+        if (len(tlistInternal)==7):
+            tarr=[]
+            for g in gong:
+                if (g not in tlistInternal):
+                    tarr.append(g)
+            updateManuRules(tarr,tsum-45)
+            removeTwoSum(tarr,45-tsumInternal,1)
+            checkCellTwoNumber()
+            checkOneNumber()
+
         if (len(tlist)==10):
             for t in tlist:
                 if(t not in gong):
@@ -263,13 +287,14 @@ def checkGong45():
                     break
                 
         if (len(tlist)==11):
-            tarr=[]
-            for t in tlist:
-                if(t not in gong):
-                    tarr.append(t)
-            removeTwoSum(tarr,tsum-45,check2NumConflict(tarr[0],tarr[1]))
-            checkCellTwoNumber()
-            checkOneNumber()
+                tarr=[]
+                for t in tlist:
+                    if(t not in gong):
+                        tarr.append(t)
+                removeTwoSum(tarr,tsum-45,check2NumConflict(tarr[0],tarr[1]))
+                SubcheckTwoSum(tarr,tsum-45)
+                checkCellTwoNumber()
+                checkOneNumber()
 
 initSUDO()
 for i in range(len(manuRules)):
