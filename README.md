@@ -3,7 +3,8 @@ killer sudoku solver
 
 # Note: Using solver will make you lose your enjoyment of sudoku !!!
 
-![example.png]("example.png")
+
+!["example.png"](https://github.com/atlasbioinfo/KillerSudokuSolver/blob/main/example.png)
 
 1. Modified the rules.tsv
     * No overlapped rules support
